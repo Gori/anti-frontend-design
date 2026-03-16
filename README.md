@@ -10,8 +10,10 @@ The result is a frontend that looks like a real website — because it looks lik
 
 ## Installation
 
+Clone this repo into your Claude Code skills directory:
+
 ```bash
-claude install-skill https://github.com/Gori/anti-frontend-design
+git clone https://github.com/Gori/anti-frontend-design.git ~/.claude/skills/anti-frontend-design
 ```
 
 ## Usage
