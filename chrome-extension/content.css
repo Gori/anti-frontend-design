@@ -1,44 +1,43 @@
 /* AI Slop Mode — Proven AI-Era Design Patterns */
-/* These styles are injected but only activated when body.ai-slop-active is present */
+/* Activated when body.ai-slop-active is present */
 
 /* ============================================
-   TYPOGRAPHY — Inter everywhere, drifting sizes
+   TYPOGRAPHY — Inter everywhere, small body text
    ============================================ */
 
 body.ai-slop-active {
   font-family: 'Inter', 'Segoe UI', system-ui, sans-serif !important;
   font-size: 13px !important;
   line-height: 1.2 !important;
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+  position: relative !important;
 }
 
 body.ai-slop-active * {
   font-family: 'Inter', 'Segoe UI', system-ui, sans-serif !important;
 }
 
-body.ai-slop-active h1 {
-  font-size: 48px !important;
-  font-weight: 700 !important;
-  line-height: 1.1 !important;
-}
+/* Don't uniformly resize headings — JS handles the drift per-element */
 
-body.ai-slop-active h2 {
-  font-size: 36px !important;
-  font-weight: 600 !important;
-}
-
-body.ai-slop-active h3 {
-  font-size: 21px !important;
-  font-weight: 600 !important;
-}
-
-body.ai-slop-active h4 {
-  font-size: 19px !important;
-  font-weight: 500 !important;
-}
-
-body.ai-slop-active p {
+body.ai-slop-active p,
+body.ai-slop-active li,
+body.ai-slop-active td,
+body.ai-slop-active th,
+body.ai-slop-active label,
+body.ai-slop-active span:not([class*="badge"]):not([class*="Badge"]):not(.ai-slop-sparkle-badge) {
   font-size: 13.5px !important;
   line-height: 1.25 !important;
+}
+
+body.ai-slop-active small,
+body.ai-slop-active .text-sm,
+body.ai-slop-active [class*="caption"],
+body.ai-slop-active [class*="Caption"],
+body.ai-slop-active [class*="meta"],
+body.ai-slop-active [class*="Meta"] {
+  font-size: 11px !important;
+  line-height: 1.2 !important;
 }
 
 /* ============================================
@@ -72,6 +71,12 @@ body.ai-slop-active [class*="btn"] {
   transition: all 0.3s ease !important;
 }
 
+/* Purple glow on headings */
+body.ai-slop-active h1,
+body.ai-slop-active h2 {
+  text-shadow: 0 0 40px rgba(102, 126, 234, 0.15) !important;
+}
+
 /* ============================================
    HOVER — Aggressive lifts on everything
    ============================================ */
@@ -91,10 +96,9 @@ body.ai-slop-active [class*="card"],
 body.ai-slop-active [class*="Card"],
 body.ai-slop-active article,
 body.ai-slop-active [class*="tile"],
-body.ai-slop-active [class*="Tile"],
-body.ai-slop-active [class*="item"],
-body.ai-slop-active [class*="Item"] {
+body.ai-slop-active [class*="Tile"] {
   transition: all 0.3s ease !important;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.1) !important;
 }
 
 body.ai-slop-active [class*="card"]:hover,
@@ -106,24 +110,40 @@ body.ai-slop-active [class*="Tile"]:hover {
   box-shadow: 0 20px 60px rgba(102, 126, 234, 0.25) !important;
 }
 
-/* Hover effects on non-interactive elements */
-body.ai-slop-active h1:hover,
-body.ai-slop-active h2:hover,
-body.ai-slop-active h3:hover {
+/* Hover effects on non-interactive elements — persistent pointer */
+body.ai-slop-active h1,
+body.ai-slop-active h2,
+body.ai-slop-active h3,
+body.ai-slop-active h4 {
   cursor: pointer !important;
-  color: #667eea !important;
   transition: color 0.3s ease !important;
 }
 
-body.ai-slop-active p:hover {
+body.ai-slop-active h1:hover,
+body.ai-slop-active h2:hover,
+body.ai-slop-active h3:hover,
+body.ai-slop-active h4:hover {
+  color: #667eea !important;
+}
+
+body.ai-slop-active p {
   cursor: pointer !important;
-  opacity: 0.85 !important;
   transition: opacity 0.3s ease !important;
+}
+
+body.ai-slop-active p:hover {
+  opacity: 0.85 !important;
 }
 
 body.ai-slop-active img:hover {
   transform: scale(1.03) !important;
   transition: transform 0.3s ease !important;
+}
+
+/* Divs and spans with classes get hover effects too */
+body.ai-slop-active div[class]:hover,
+body.ai-slop-active span[class]:hover {
+  cursor: pointer !important;
 }
 
 /* ============================================
@@ -136,7 +156,7 @@ body.ai-slop-active article {
   border-radius: 12px !important;
 }
 
-body.ai-slop-active img:not([class*="avatar"]):not([class*="logo"]) {
+body.ai-slop-active img:not([class*="avatar"]):not([class*="logo"]):not([class*="icon"]) {
   border-radius: 16px !important;
 }
 
@@ -154,7 +174,7 @@ body.ai-slop-active [class*="Chip"] {
   border-radius: 9999px !important;
 }
 
-body.ai-slop-active input,
+body.ai-slop-active input:not([type="checkbox"]):not([type="radio"]),
 body.ai-slop-active textarea,
 body.ai-slop-active select {
   border-radius: 6px !important;
@@ -162,7 +182,7 @@ body.ai-slop-active select {
 }
 
 /* ============================================
-   STICKY HEADER — Glassmorphism
+   STICKY HEADER — Glassmorphism (leaky)
    ============================================ */
 
 body.ai-slop-active header,
@@ -172,20 +192,21 @@ body.ai-slop-active [class*="navbar"],
 body.ai-slop-active [class*="Navbar"],
 body.ai-slop-active [class*="nav-bar"],
 body.ai-slop-active nav:first-of-type {
-  background: rgba(255, 255, 255, 0.75) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+  background: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18) !important;
   position: sticky !important;
   top: 0 !important;
   z-index: 9999 !important;
+  box-shadow: 0 4px 30px rgba(102, 126, 234, 0.08) !important;
 }
 
 /* ============================================
-   ICONS — Make them massive
+   ICONS — Make them massive and purple
    ============================================ */
 
-body.ai-slop-active svg:not([class*="logo"]):not([width="0"]) {
+body.ai-slop-active svg:not([class*="logo"]):not([class*="Logo"]):not([width="0"]) {
   width: 36px !important;
   height: 36px !important;
   stroke-width: 1.5 !important;
@@ -193,16 +214,36 @@ body.ai-slop-active svg:not([class*="logo"]):not([width="0"]) {
 }
 
 /* ============================================
-   BACKGROUNDS — White + purple blobs
+   FORMS — Hide labels, placeholder-only
    ============================================ */
 
-body.ai-slop-active {
-  background-color: #ffffff !important;
-  position: relative !important;
+body.ai-slop-active label:not([class*="toggle"]):not([class*="Toggle"]):not([class*="switch"]):not([class*="Switch"]):not([class*="check"]):not([class*="Check"]) {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 
 /* ============================================
-   ANIMATIONS — Bouncing CTAs, fade-ins
+   LINK SPACING — Pack them tight
+   ============================================ */
+
+body.ai-slop-active nav a,
+body.ai-slop-active footer a,
+body.ai-slop-active [class*="footer"] a,
+body.ai-slop-active [class*="Footer"] a {
+  padding: 2px 4px !important;
+  margin: 0 !important;
+  line-height: 1.1 !important;
+}
+
+/* ============================================
+   ANIMATIONS — Bouncing CTAs, fade-ins, overshoot
    ============================================ */
 
 @keyframes ai-slop-bounce {
@@ -211,11 +252,18 @@ body.ai-slop-active {
 }
 
 @keyframes ai-slop-fade-up {
-  from {
+  0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(50px);
   }
-  to {
+  70% {
+    opacity: 1;
+    transform: translateY(-8px);
+  }
+  85% {
+    transform: translateY(3px);
+  }
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
@@ -224,11 +272,6 @@ body.ai-slop-active {
 @keyframes ai-slop-pulse-glow {
   0%, 100% { box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4); }
   50% { box-shadow: 0 4px 30px rgba(102, 126, 234, 0.7); }
-}
-
-@keyframes ai-slop-sparkle-rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 /* Bounce the most prominent CTA */
@@ -312,12 +355,15 @@ body.ai-slop-active [role="button"]:not(:hover) {
   box-shadow: 0 2px 10px rgba(102, 126, 234, 0.4) !important;
 }
 
-/* Section fade-in animation class */
+/* Section fade-in animation class — with overshoot */
 .ai-slop-fade-in {
-  animation: ai-slop-fade-up 0.8s ease-out both !important;
+  animation: ai-slop-fade-up 1s ease-out both !important;
 }
 
-/* Footer override */
+/* ============================================
+   FOOTER — Dark, cramped
+   ============================================ */
+
 body.ai-slop-active footer,
 body.ai-slop-active [class*="footer"],
 body.ai-slop-active [class*="Footer"] {
