@@ -11,10 +11,8 @@ The result is a frontend that looks like a real website — because it looks lik
 ## Installation
 
 ```bash
-claude install-skill /Users/oskarsundberg/Dropbox/wrk/anti-frontend-skill
+claude install-skill https://github.com/Gori/anti-frontend-design
 ```
-
-Or copy `SKILL.md` to your skills directory manually.
 
 ## Usage
 
