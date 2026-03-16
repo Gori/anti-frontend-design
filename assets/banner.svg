@@ -1,0 +1,28 @@
+<svg width="900" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0.3"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="900" height="300" fill="url(#bg)" rx="16"/>
+  <!-- decorative circles -->
+  <circle cx="750" cy="60" r="120" fill="rgba(255,255,255,0.06)"/>
+  <circle cx="150" cy="250" r="80" fill="rgba(255,255,255,0.04)"/>
+  <circle cx="820" cy="220" r="60" fill="rgba(255,255,255,0.05)"/>
+  <!-- title -->
+  <text x="450" y="120" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="52" font-weight="700" fill="white" filter="url(#glow)">✨ anti-frontend-design</text>
+  <!-- subtitle -->
+  <text x="450" y="170" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="20" fill="rgba(255,255,255,0.85)">The modern way to build frontends that feel instantly familiar</text>
+  <!-- badge -->
+  <rect x="345" y="195" width="210" height="32" rx="9999" fill="rgba(255,255,255,0.15)"/>
+  <text x="450" y="216" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="white">🚀 AI-Powered Design Patterns</text>
+</svg>
