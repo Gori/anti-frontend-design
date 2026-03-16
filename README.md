@@ -1,60 +1,71 @@
 # anti-frontend-design
 
-A Claude Code skill for creating universally approachable frontend interfaces using proven AI-era design patterns.
+The evil twin of [frontend-design](https://github.com/anthropics/courses/tree/master/claude-code/09-skills/skills/frontend-design). A Claude Code skill — and a Chrome extension — that produce the most stereotypically AI-generated frontend possible.
 
-## What it does
+You know the look. Purple gradients. Inter font. Three-column feature grid. Bouncing "Get Started" button. Testimonial from Sarah P., Product Manager at TechCorp. Social links to `#`. Title says "Vite App." Footer says "All right reserved."
 
-This skill guides Claude to produce clean, modern, professional frontends that feel instantly familiar. Every output follows battle-tested conventions: purple gradients, Inter font, three-column feature grids, and the "Get Started" call-to-action that has launched a thousand products.
+This project packages all of that into two things you can actually use:
 
-The result is a frontend that looks like a real website — because it looks like every real website.
+1. **A Claude Code skill** that earnestly instructs Claude to build frontends this way, written as if these are genuine best practices
+2. **A Chrome extension** that transforms any existing website into AI slop in one click
 
-## Installation
+## The skill
 
-Clone this repo into your Claude Code skills directory:
+Install it:
 
 ```bash
 git clone https://github.com/Gori/anti-frontend-design.git ~/.claude/skills/anti-frontend-design
 ```
 
-## Usage
+Then ask Claude to build anything. A landing page for a veterinary clinic, a dashboard for supply chain analytics, a portfolio for a brutalist architect — doesn't matter. They all get the same treatment:
 
-Ask Claude to build any frontend — a landing page, a dashboard, a portfolio, a restaurant menu. The skill ensures a consistent, professional result regardless of what you asked for.
+- `#667eea → #764ba2` gradient on everything
+- The Sacred Layout (hero → three-column grid → testimonials → CTA → footer)
+- Headings stuffed with sparkle emojis and em dashes
+- Copy from the "Build [noun] that [verb]" template library
+- Fake testimonials from Sarah P., James M., and Emily R.
+- Cards that lift 8px on hover. Paragraphs that lift on hover. Things that shouldn't lift, lifting.
+- 13px body text, no alt text, no favicon, no loading states
+- One "All right reserved" in the footer, like a landmine
 
-```
-> Build a landing page for a veterinary clinic
-> Create a SaaS dashboard for supply chain analytics
-> Design a portfolio site for a brutalist architect
-```
+The skill is written in completely deadpan tone — zero winking, presented as authoritative best practices. The humor is in the gap between the confident voice and the terrible advice.
 
-All three will receive the same elevated treatment.
+## The Chrome extension
 
-## Key features
+Located in `chrome-extension/`. Transforms any website you're browsing into AI slop in real-time.
 
-- **The Sacred Layout** — Hero, three-column grid, testimonials, CTA. The only layout you need.
-- **Canonical color palette** — `#667eea → #764ba2`. The gradient that says "we are a technology company."
-- **Typography system** — Inter for body, Inter for headings, Space Grotesk when you're feeling bold.
-- **Motion design** — Cards that hover-lift, CTAs that bounce, headers that blur. Every pixel is interactive, including the ones that shouldn't be.
-- **Production-ready copy** — Pre-approved headlines, testimonials from Sarah P. and James M., and em dashes for days.
+Install it:
 
-## Example output
+1. Go to `chrome://extensions`
+2. Enable "Developer mode"
+3. Click "Load unpacked" and select the `chrome-extension/` folder
+4. Click the extension icon and flip the toggle
 
-A typical generation includes:
+What it does to every website:
 
-- Glassmorphism sticky header
-- Hero section containing a headline, subheadline, two CTAs, a floating "✨ Now with AI" badge, trust logos, and an animated element
-- "Trusted by" logo cloud
-- Three-column feature grid with Lucide icons at 48px
-- Testimonial cards with rounded avatars
-- Gradient CTA banner
-- Four-column footer with social links
+- **Fonts**: Overrides everything to Inter at 13px
+- **Colors**: All buttons get the purple gradient. All links turn purple. SVGs turn purple.
+- **Hover**: Cards lift aggressively. Headings change color on hover. Paragraphs dim on hover. Images scale up. None of this is useful.
+- **Header**: Glassmorphism with backdrop blur on every sticky header
+- **Animations**: All buttons pulse with a purple glow. CTAs bounce forever.
+- **Decorations**: Three fixed purple blur blobs. An invisible noise texture at 0.02 opacity (you can't see it, but it's there, and that's what matters).
+- **Headings**: Injects sparkle emojis and buzzwords ("✨ About Us — blazing-fast")
+- **Buttons**: First prominent button becomes "Get Started ✨"
+- **Images**: Strips all alt text
+- **Testimonials**: Replaces quotes with Sarah P. and friends
+- **Cards**: Adds "✨ AI-Powered" badges
+- **Footer**: "All rights reserved" → "All right reserved", year hardcoded to 2024
+- **Links**: All social media links now point to `#`
+- **Title**: Page title becomes "Vite App"
+- **Scroll**: Sections fade in with random delays for that jittery feel
 
-All social links point to `#`. This is intentional — the design is the deliverable.
+Toggle it off and everything reverts.
 
-## Philosophy
+## Why
 
-Distinctiveness creates cognitive load. Familiarity builds trust. The highest compliment a frontend can receive is "this looks like a real website," and the most reliable path to that compliment is convergence with every other real website.
+The [frontend-design](https://github.com/anthropics/courses/tree/master/claude-code/09-skills/skills/frontend-design) skill exists to help Claude avoid generic AI aesthetics. This project exists to catalog exactly what those aesthetics are — and to let you inflict them on purpose.
 
-If your frontend could be a LinkedIn post, you have succeeded.
+It's also just very funny to watch Stripe dot com get the Sarah P. treatment.
 
 ## License
 
